@@ -1,6 +1,8 @@
 #ifndef CIRCULARLY_LINKED_QUEUE_H
 #define CIRCULARLY_LINKED_QUEUE_H 
 
+#include<string>
+
 class RuntimeException {
     private:
         std::string errorMsg;
@@ -22,9 +24,13 @@ class CNode {
 };
 
 template<typename E>
+class LinkedQueue;
+
+template<typename E>
 class CircleList {
     private:
         CNode<E>* cursor;
+        friend class LinkedQueue<E>;
     public:
         CircleList();
         ~CircleList();
@@ -34,6 +40,20 @@ class CircleList {
         void advance();
         void add(const E& e);
         void remove();
+};
+
+template<typename E>
+class LinkedQueue {
+    private:
+        CircleList<E> C;
+        int n;
+    public:
+        LinkedQueue();
+        int size() const;
+        bool empty() const;
+        const E& front() const throw(RuntimeException);
+        void enqueue(const E& e);
+        void dequeue() throw(RuntimeException);
 };
 
 #endif

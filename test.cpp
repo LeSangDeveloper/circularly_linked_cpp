@@ -9,5 +9,13 @@ int main() {
     a.add(4);
     cout << a.front() << endl;
     cout << a.back() << endl;
+    
+    LinkedQueue<int> b;
+    b.enqueue(5);
+    b.enqueue(6);
+    cout << b.front() << endl;
+    b.dequeue();
+    cout << b.front() << endl;
+
     return 0;
 }
