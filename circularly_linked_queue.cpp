@@ -3,14 +3,6 @@
 
 using namespace std;
 
-class RuntimeException {
-    private:
-        std::string errorMsg;
-    public:
-        RuntimeException(const std::string& err) {errorMsg = err;}
-        std::string getMessage() const {return errorMsg;}
-};
-
 template<typename E>
 CircleList<E>::CircleList()
 : cursor(NULL) {}

@@ -1,6 +1,14 @@
 #ifndef CIRCULARLY_LINKED_QUEUE_H
 #define CIRCULARLY_LINKED_QUEUE_H 
 
+class RuntimeException {
+    private:
+        std::string errorMsg;
+    public:
+        RuntimeException(const std::string& err) {errorMsg = err;}
+        std::string getMessage() const {return errorMsg;}
+};
+
 template<typename E>
 class CircleList;
 
